@@ -1,5 +1,5 @@
 [problem]
-title = "Sum of two numbers"
+title = "Sum of three values"
 
 [parameters]
 digits = 3

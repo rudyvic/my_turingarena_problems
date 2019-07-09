@@ -1,18 +1,18 @@
-procedure find_sum(a[],n,sum)
-function get_result(i)
+procedure find_sum(n,a[],sum);
+function get_result(i);
 
 main {
     read n;
+    
     for i to n {
         read a[i];
     }
     read sum;
 
-    call find_sum(a, n);
-    write m;
+    call find_sum(n, a, sum);
     
-    // for i to 3 {
-    //     call ans = get_result(i);
-    //     write ans;
-    // }
+    for i to 3 {
+        call ans = get_result(i);
+        write ans;
+    }
 }
