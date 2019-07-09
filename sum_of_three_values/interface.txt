@@ -1,4 +1,4 @@
-function find_sum(a[],n,sum)
+procedure find_sum(a[],n,sum)
 function get_result(i)
 
 main {
@@ -8,7 +8,7 @@ main {
     }
     read sum;
 
-    call m = find_sum(a, n);
+    call find_sum(a, n);
     write m;
     
     // for i to 3 {
