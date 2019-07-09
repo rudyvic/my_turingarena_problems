@@ -20,6 +20,9 @@ def get_sum(array):
 
 
 def is_correct(array,indexes,sum):
+    if((indexes[0]==indexes[1] or indexes[1]==indexes[2]) or indexes[0]==indexes[2]):
+        return False
+
     a1 = array[indexes[0]]
     a2 = array[indexes[1]]
     a3 = array[indexes[2]]
