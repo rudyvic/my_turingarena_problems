@@ -1,0 +1,18 @@
+function find_sum(a[],n,sum)
+function get_result(i)
+
+main {
+    read n;
+    for i to n {
+        read a[i];
+    }
+    read sum;
+
+    call m = find_sum(a, n);
+    write m;
+    
+    // for i to 3 {
+    //     call ans = get_result(i);
+    //     write ans;
+    // }
+}

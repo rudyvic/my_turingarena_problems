@@ -1,0 +1,15 @@
+function compare_two_arrays(n, a[], b[]);
+
+main {
+    read n;
+    for i to n {
+        read a[i];
+    }
+
+    for i to n {
+        read b[i];
+    }
+
+    call index = compare_two_arrays(n, a, b);
+    write index;
+}
