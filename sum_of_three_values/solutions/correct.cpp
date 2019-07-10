@@ -22,6 +22,6 @@ void find_sum(int n, int* a, int sum) {
 }
 
 int get_result(int i) {
-    return res[i];
+    return res[i]+1;
 }
 
