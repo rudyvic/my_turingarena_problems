@@ -16,11 +16,14 @@ Print **three integers**: the positions of the values.<br>
 If there are several solutions, you may print any of them.<br>
 If there are no solutions, print **IMPOSSIBLE**.
 
+<!---
 ## Constraints
 ```
 1≤n≤5000
 1≤x,ai≤109
 ```
+
+-->
 
 ## Example
 ### Input:
