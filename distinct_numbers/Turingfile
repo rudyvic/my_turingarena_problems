@@ -1,5 +1,5 @@
 [problem]
-title = "Sort"
+title = "Distinct numbers"
 
 [scoring]
 goals = ["correct"]
