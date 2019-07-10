@@ -3,9 +3,11 @@ This problem is taken from [CSES](https://cses.fi/problemset/task/1641)
 
 You are given an array of n integers, and your task is to find three values (at distinct positions) whose sum is x.
 
+<!---
 <description for="sum">
 Compute the sum of <param>a</param>, <param>b</param>
 </description>
+-->
 
 ## Input
 The first input line has two integers *n* and *x*: the array size and the target sum.<br>
@@ -22,7 +24,6 @@ If there are no solutions, print **IMPOSSIBLE**.
 1≤n≤5000
 1≤x,ai≤109
 ```
-
 -->
 
 ## Example
@@ -33,5 +34,5 @@ If there are no solutions, print **IMPOSSIBLE**.
 ```
 ### Output:
 ```
-0 2 3
+1 3 4
 ```
