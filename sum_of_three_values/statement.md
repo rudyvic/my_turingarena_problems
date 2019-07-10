@@ -33,5 +33,5 @@ If there are no solutions, print **IMPOSSIBLE**.
 ```
 ### Output:
 ```
-1 3 4
+0 2 3
 ```
