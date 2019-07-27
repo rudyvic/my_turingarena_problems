@@ -20,27 +20,54 @@ def check(vett, res, n):
         d = d + 1
 
     if res == d:
-        print(f"correct! [{d}]")
+        if(n <= 100):
+            print(f"small_input_correct! [{d}]")
+            goals["small_input_correct"] = True
+        elif(n <= 1000):
+            print(f"medium_input_correct! [{d}]")
+            goals["medium_input_correct"] = True
+        else:
+            print(f"large_input_correct! [{d}]")
+            goals["large_input_correct"] = True
     else:
         print("WRONG!")
-        all_passed = False
+        if(n <= 100):
+            print(f"small_input_correct! [{d}]")
+            goals["small_input_correct"] = False
+            all_passed = False
+        elif(n <= 1000):
+            print(f"medium_input_correct! [{d}]")
+            goals["medium_input_correct"] = False
+            all_passed = False
+        else:
+            print(f"large_input_correct! [{d}]")
+            goals["large_input_correct"] = False
+            all_passed = False
+
+
 
 all_passed = True
-for _ in range(10):
-    n = 10
-    a = random.choices(range(10 ** 1, 10 ** 2), k=n)
+for i in range(3):
+    print(f"\nSUBTASK {i + 1}")
+    for _ in range(10):
+        n = 10 ** (i+2)
+        a = random.choices(range(1, 10 ** 4), k=n)
+        try:
+            with run_algorithm(submission.source) as process:
+                process.procedures.sort(n, a)
+                c = process.functions.distinct(n)
 
-    try:
-        with run_algorithm(submission.source) as process:
-            process.procedures.sort(n, a)
-            c = process.functions.distinct(n)
+        except AlgorithmError as e:
+            print(e)
+            all_passed = False
 
-    except AlgorithmError as e:
-        print(e)
-        all_passed = False
+        check(a, c, n)
 
+    #print_vett(a,n)
 
-    check(a, c, n)
+if(all_passed == False):
+    print("\nNot all test passed")
 
-    print_vett(a,n)
+else:
+    print("\nAll test passed\n")
 
