@@ -79,5 +79,5 @@ goals["small_input"] = do_test(10,10,1,2)
 goals["medium_input"] = do_test(20,1000,2,5)
 goals["large_input"] = do_test(5,10000,3,3)
 
-print("\nSummary")
-print(f"{goals}")
+print("Summary")
+print(f"{goals}\n")
