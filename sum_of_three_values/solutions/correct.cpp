@@ -3,7 +3,7 @@
 
 std::vector<int> res(3);
 
-void find_sum(int n, int* a, int sum) {
+void find_sum(int n, int sum, int* a) {
     int temp_sum = 0;
 
     for(int i=0; i<n; i++) {
