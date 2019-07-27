@@ -3,7 +3,7 @@ import random
 from turingarena import *
 from turingarena.evallib.algorithm import run_algorithm
 
-def get_sum(array):
+def get_sum(array,N):
     done = False
     while(done==False):
         i1 = random.randint(0,N-1)
@@ -31,8 +31,10 @@ def is_correct(array,indexes,sum):
     else:
         return False
 
-def do_test(num_tests,N,num_case,max_exp,goals_res):
+def do_test(num_tests,N,num_subtask,max_exp):
     all_passed = True
+    print(f"SUBTASK #{num_subtask}")
+
     for num_test in range(num_tests):
         # create the array in a random way
         array = []
@@ -40,10 +42,10 @@ def do_test(num_tests,N,num_case,max_exp,goals_res):
             array.append(random.randint(0,10 ** max_exp))
 
         # take a random sum of 3 distinct elements of the array
-        correct = get_sum(array)
+        correct = get_sum(array,N)
 
-        # print(f"[CASE {num_case}] Testing {array} with sum {correct} ...", end=" ")
-        print(f"[CASE {num_case}] Test {num_test+1}/{num_tests}: {N} elements, values between 0 and {10**max_exp} -->", end=" ")
+        # print(f"[CASE {num_subtask}] Testing {array} with sum {correct} ...", end=" ")
+        print(f"Test {num_test+1}/{num_tests}: {N} elements, values between 0 and {10**max_exp} -->", end=" ")
 
         try:
             with run_algorithm(submission.source) as process:
@@ -56,29 +58,26 @@ def do_test(num_tests,N,num_case,max_exp,goals_res):
                 else:
                     print("WRONG!")
                     all_passed = False
-                    goals["correct"] = False
-            print(f"(time: {int(process.time_usage * 1000000)} us)",end="\n\n")
+                    # goals["correct"] = False
+            print(f"(time: {int(process.time_usage * 1000000)} us)",end="\n")
         except AlgorithmError as e:
             print(f" error: {e}")
-            goals["correct"] = False
+            all_passed = False
+            # goals["correct"] = False
     if(all_passed==True):
-        print(f"[CASE {num_case}] All tests passed correctly.",end="\n\n\n")
-        goals_res.append(True)
+        print(f"[SUBTASK {num_subtask}] All tests passed correctly.",end="\n\n\n")
     else:
-        print(f"[CASE {num_case}] NOT all tests passed correctly...",end="\n\n\n")
-        goals_res.append(False)
+        print(f"[SUBTASK {num_subtask}] NOT all tests passed correctly...",end="\n\n\n")
 
-    goals.setdefault("correct", True)
+    # goals.setdefault("correct", True)
+    return all_passed
 
 
-num_cases = 4
-num_tests = 20
-N = 10
-goals_res = []
+############ MAIN ##############
 
-do_test(10,10,1,2,goals_res)
-do_test(10,100,2,2,goals_res)
-do_test(20,1000,3,5,goals_res)
-do_test(5,100000,4,3,goals_res)
+goals["small_input"] = do_test(10,10,1,2)
+goals["medium_input"] = do_test(20,1000,2,5)
+goals["large_input"] = do_test(5,10000,3,3)
 
-print(goals_res)
+print("Summary")
+print(f"{goals}\n")

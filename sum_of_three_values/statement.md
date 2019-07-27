@@ -6,6 +6,9 @@ You are given an array of n integers, and your task is to find three values (at 
 <description for="find_sum">
 Find the sum equal to <param>sum</param> in the array <param>a</param> that has <param>n</param> elements.
 </description>
+<description for="get_result">
+Return the <param>i</param>-th element of the results.
+</description>
 
 ## Input
 The first input line has two integers *n* and *x*: the array size and the target sum.<br>
@@ -16,13 +19,23 @@ Print **three integers**: the positions of the values.<br>
 If there are several solutions, you may print any of them.<br>
 If there are no solutions, print **IMPOSSIBLE**.
 
-<!---
-## Constraints
+
+## Subtasks
+**Subtask 1**
 ```
-1≤n≤5000
-1≤x,ai≤109
+n=10
+0≤x≤10^2
 ```
--->
+**Subtask 2**
+```
+n=1000
+0≤x≤10^5
+```
+**Subtask 3**
+```
+n=100000
+0≤x≤10^3
+```
 
 ## Example
 ### Input:
