@@ -1,9 +1,0 @@
-function sum(a, b);
-function diff(a, b);
-
-main {
-    read a, b;
-    call c = sum(a, b);
-    call d = diff(a, b);
-    write c, d;
-}
