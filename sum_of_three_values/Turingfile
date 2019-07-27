@@ -5,7 +5,7 @@ title = "Sum of three values"
 digits = 3
 
 [scoring]
-goals = ["correct"]
+goals = ["correct", "case1", "case2", "case3"]
 
 [files]
 public_paths = ["interface.txt", "evaluator.py"]
