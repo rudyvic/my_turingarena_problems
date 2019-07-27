@@ -18,7 +18,6 @@ def get_sum(array):
     return array[i1] + array[i2] + array[i3]
 
 
-
 def is_correct(array,indexes,sum):
     if((indexes[0]==indexes[1] or indexes[1]==indexes[2]) or indexes[0]==indexes[2]):
         return False

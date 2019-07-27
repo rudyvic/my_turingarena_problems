@@ -3,11 +3,9 @@ This problem is taken from [CSES](https://cses.fi/problemset/task/1641)
 
 You are given an array of n integers, and your task is to find three values (at distinct positions) whose sum is x.
 
-<!---
-<description for="sum">
-Compute the sum of <param>a</param>, <param>b</param>
+<description for="find_sum">
+Find the sum equal to <param>sum</param> in the array <param>a</param> that has <param>n</param> elements.
 </description>
--->
 
 ## Input
 The first input line has two integers *n* and *x*: the array size and the target sum.<br>
