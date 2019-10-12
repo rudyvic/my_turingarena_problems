@@ -1,0 +1,16 @@
+procedure sort(n, a[]);
+function distinct(n);
+
+main {
+    read n;
+
+    for i to n {
+        read a[i];
+    }
+
+    call sort(n, a);
+
+    call d = distinct(n);
+    
+    write d;
+}

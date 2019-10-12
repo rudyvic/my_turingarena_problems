@@ -1,0 +1,6 @@
+[problem]
+title = "Distinct numbers"
+
+[scoring]
+goals = ["small_input_correct", "medium_input_correct", "large_input_correct"]
+
